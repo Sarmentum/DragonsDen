@@ -27,21 +27,16 @@ const DiagramNode = ({ label }) => (
   <div className="rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-xs text-zinc-200">{label}</div>
 );
 
-const VariantLamp = ({ className, topClass, bodyClass }) => (
+const VariantLamp = ({ className, imageSrc, alt }) => (
   <div className={`variant-layer absolute inset-0 ${className}`}>
     <div className="absolute right-4 top-4 rounded-full border border-algaeSoft/50 bg-algaeSoft/10 px-3 py-1 text-xs text-algae">
-      Hero Product Render Placeholder
+      Hero Product Render
     </div>
-    <div className="absolute inset-x-8 bottom-8 rounded-2xl border border-white/15 bg-black/35 p-5">
-      <div className="flex flex-col items-center">
-        <div className={`h-5 w-36 rounded-full ${topClass} shadow-lg`} />
-        <div className="-mt-1 h-2 w-28 rounded-full bg-amber-200/70 blur-[1px]" />
-        <div className="relative h-28 w-24 rounded-b-[2.2rem] rounded-t-[1.4rem] border border-lime-300/60 bg-gradient-to-b from-lime-300/70 via-lime-400/40 to-lime-500/80 shadow-algae">
-          <div className="absolute inset-2 rounded-b-[1.8rem] rounded-t-[1rem] border border-white/25" />
-        </div>
-        <div className={`-mt-1 h-16 w-36 rounded-2xl border border-white/20 ${bodyClass}`} />
-      </div>
-    </div>
+    <img
+      src={imageSrc}
+      alt={alt}
+      className="h-full w-full object-contain rounded-2xl"
+    />
   </div>
 );
 
@@ -83,9 +78,9 @@ function App() {
 
             <div className="relative animate-fade-up animation-delay-150">
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-slateDeep to-black p-6 shadow-2xl shadow-black/40">
-                <VariantLamp className="variant-cycle-1" topClass="bg-zinc-700" bodyClass="bg-gradient-to-b from-zinc-800 to-zinc-900" />
-                <VariantLamp className="variant-cycle-2" topClass="bg-zinc-200" bodyClass="bg-gradient-to-b from-zinc-100 to-zinc-300" />
-                <VariantLamp className="variant-cycle-3" topClass="bg-amber-700" bodyClass="bg-gradient-to-b from-amber-700 to-amber-900" />
+                <VariantLamp className="variant-cycle-1" imageSrc="/assets/Screenshot 2026-04-15 233815.png" alt="Palgae Aura - Minimal Round" />
+                <VariantLamp className="variant-cycle-2" imageSrc="/assets/Screenshot 2026-04-15 233832.png" alt="Palgae Noir - Premium Oval" />
+                <VariantLamp className="variant-cycle-3" imageSrc="/assets/Screenshot 2026-04-15 233844.png" alt="Palgae Terra - Warm Rectangular" />
               </div>
               <div className="mt-4 grid grid-cols-3 gap-3">
                 {colorVariants.map((variant) => (
@@ -108,15 +103,14 @@ function App() {
           className="bg-white/[0.02]"
         >
           <div className="grid gap-6 lg:grid-cols-3">
-            {productModels.map((model) => (
+            {productModels.map((model, index) => (
               <article key={model.name} className={cardStyle}>
                 <div className="mb-4 rounded-xl border border-white/15 bg-black/40 p-4">
-                  <div className="mx-auto flex h-36 w-28 flex-col items-center justify-end">
-                    <div className="h-3 w-20 rounded-full bg-zinc-400/70" />
-                    <div className="-mt-0.5 h-1.5 w-14 rounded-full bg-amber-200/70" />
-                    <div className="h-20 w-16 rounded-b-[1.8rem] rounded-t-[0.9rem] border border-lime-300/60 bg-gradient-to-b from-lime-300/70 via-lime-400/40 to-lime-500/80" />
-                    <div className="-mt-1 h-10 w-20 rounded-2xl border border-white/20 bg-zinc-800/80" />
-                  </div>
+                  <img
+                    src={`/assets/Screenshot 2026-04-15 2338${index === 0 ? '15' : index === 1 ? '32' : '44'}.png`}
+                    alt={model.name}
+                    className="mx-auto h-36 w-28 object-contain"
+                  />
                 </div>
                 <h3 className="text-lg font-semibold text-white">{model.name}</h3>
                 <p className="mt-2 text-sm text-zinc-300">Finish: {model.finish}</p>
@@ -214,16 +208,14 @@ function App() {
               ))}
             </div>
             <div className={`${cardStyle} flex items-center justify-center`}>
-              <div className="w-full rounded-xl border border-white/15 bg-slateDeep/70 p-5">
-                <p className="text-xs uppercase tracking-[0.16em] text-zinc-400">Process diagram</p>
-                <div className="mt-4 grid grid-cols-2 gap-3 text-center">
-                  <DiagramNode label="Sensor Input" />
-                  <DiagramNode label="Air Exchange" />
-                  <DiagramNode label="Algae + Light" />
-                  <DiagramNode label="Ambient Return" />
-                </div>
-                <div className="mt-4 h-1 w-full rounded bg-gradient-to-r from-algaeSoft/40 via-cyan-300/30 to-algaeSoft/20" />
-              </div>
+              <video
+                src="/assets/task_01kpb0sy22e70ag4cvhje33xpx_task_01kpb0sy22e70ag4cvhje33xpx_genid_f1049485-cb20-448f-8648-bda2f09a75ed_26_04_16_11_36_857736_videos_00000_123173044_source.mp4"
+                controls
+                className="w-full rounded-xl"
+                poster="/assets/ChatGPT Image Apr 15, 2026, 11_34_05 PM.png"
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </Section>
