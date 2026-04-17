@@ -1,6 +1,7 @@
 export const navLinks = [
   { label: 'Models', href: '#models' },
   { label: 'Product', href: '#product' },
+  { label: 'Technology', href: '#technology' },
   { label: 'Companion IAQ', href: '#companion' },
   { label: 'App UI', href: '#app-ui' },
   { label: 'How It Works', href: '#how-it-works' },

@@ -220,6 +220,38 @@ function App() {
           </div>
         </Section>
 
+        <Section
+          id="technology"
+          eyebrow="Technology"
+          title="Internal components revealed"
+          subtitle="See how the Palgae smart chamber, sensor array, and service module fit together to make air quality visible and responsive."
+          className="bg-white/[0.02]"
+        >
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className={`${cardStyle} overflow-hidden`}>
+              <img
+                src="/assets/internal-components.png"
+                alt="Exploded view of Palgae internal components"
+                className="h-full w-full rounded-3xl object-cover"
+              />
+            </div>
+            <div className="grid gap-5">
+              {[
+                'CO₂ sensor array for precise carbon tracking',
+                'PM2.5 sensor for fine particle awareness',
+                'VOC sensor with indoor pollutant detection',
+                'Temperature and humidity sensing module',
+                'Silent air pump and airflow management',
+                'Service-friendly power board and reactor cartridge'
+              ].map((point) => (
+                <article key={point} className={cardStyle}>
+                  <p className="text-zinc-200">{point}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </Section>
+
         <Section id="benefits" eyebrow="Benefits" title="Why premium teams choose Palgae.">
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {benefits.map((item) => (
