@@ -96,96 +96,68 @@ function App() {
 
 
         <Section
-          id="models"
-          eyebrow="Models"
-          title="Three finish models. One premium Palgae core."
-          subtitle="All models share the same living microalgae and sensing platform, with different finish languages for different interiors."
-          className="bg-white/[0.02]"
-        >
-          <div className="grid gap-6 lg:grid-cols-3">
-            {productModels.map((model, index) => (
-              <article key={model.name} className={cardStyle}>
-                <div className="mb-4 rounded-xl border border-white/15 bg-black/40 p-4">
-                  <img
-                    src={`/assets/Screenshot 2026-04-15 2338${index === 0 ? '15' : index === 1 ? '32' : '44'}.png`}
-                    alt={model.name}
-                    className="mx-auto h-36 w-28 object-contain"
-                  />
-                </div>
-                <h3 className="text-lg font-semibold text-white">{model.name}</h3>
-                <p className="mt-2 text-sm text-zinc-300">Finish: {model.finish}</p>
-                <p className="mt-1 text-sm text-zinc-400">Best for: {model.bestFor}</p>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        <Section
           id="product"
           eyebrow="Product"
-          title="One product, three premium finishes and one clear mission."
-          subtitle="The same Palgae lamp platform is available in multiple color/material expressions to match different interior design languages."
+          title="Premium air technology in three elegant finishes"
+          subtitle="Living microalgae biotechnology meets smart IAQ monitoring in a luxury desk lamp form factor."
         >
-          <div className="grid gap-5 md:grid-cols-2">
-            {productPoints.map((item) => (
-              <article key={item} className={cardStyle}>
-                <p className="text-zinc-200">{item}</p>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        <Section
-          id="companion"
-          eyebrow="Air-Quality Companion"
-          title="Palgae tells you when your room air is getting worse."
-          subtitle="Simple, human messages help users take action early: open a window, improve ventilation, or adjust room conditions."
-        >
-          <div className="grid gap-5 md:grid-cols-2">
-            {companionSignals.map((signal) => (
-              <article key={signal.title} className={cardStyle}>
-                <h3 className="text-lg font-semibold text-white">{signal.title}</h3>
-                <p className="mt-2 text-zinc-300">{signal.text}</p>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        <Section
-          id="app-ui"
-          eyebrow="App Experience"
-          title="A calm, friendly mobile interface for air-quality awareness"
-          subtitle="The Palgae companion app turns complex environmental data into simple daily guidance."
-          className="bg-white/[0.02]"
-        >
-          <div className="grid gap-6 lg:grid-cols-[1fr_1.15fr]">
-            <div className={`${cardStyle} flex items-center justify-center`}>
-              <div className="w-64 rounded-[2.2rem] border border-white/15 bg-gradient-to-b from-zinc-100 to-zinc-200 p-3 shadow-2xl shadow-black/40">
-                <div className="rounded-[1.8rem] bg-white p-4">
-                  <p className="text-center text-sm font-semibold text-zinc-800">Palgae</p>
-                  <p className="mt-1 text-center text-[11px] text-zinc-500">Living Technology. Cleaner Air.</p>
-                  <div className="mt-3 rounded-xl bg-green-50 p-3">
-                    <p className="text-xs font-semibold text-emerald-800">Air Quality: Good</p>
-                    <p className="mt-1 text-[11px] text-emerald-700">CO₂ 415 ppm · PM2.5 7 μg/m³</p>
-                  </div>
-                  <div className="mt-3 rounded-xl bg-zinc-100 p-3">
-                    <p className="text-xs font-medium text-zinc-700">Air Quality History</p>
-                    <div className="mt-2 h-12 rounded bg-gradient-to-r from-emerald-200 via-emerald-100 to-emerald-200" />
-                  </div>
-                  <div className="mt-3 rounded-xl bg-amber-50 p-3">
-                    <p className="text-xs font-semibold text-amber-800">Service due in 5 days</p>
-                    <p className="mt-1 text-[11px] text-amber-700">Refill nutrients & clean chamber</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="space-y-12">
+            {/* Product Overview */}
             <div className="grid gap-5 md:grid-cols-2">
-              {appUiHighlights.map((item) => (
-                <article key={item.title} className={cardStyle}>
-                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                  <p className="mt-2 text-zinc-300">{item.text}</p>
+              {productPoints.map((item) => (
+                <article key={item} className={cardStyle}>
+                  <p className="text-zinc-200">{item}</p>
                 </article>
               ))}
+            </div>
+
+            {/* Models */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-6">Three finish models. One premium Palgae core.</h3>
+              <div className="grid gap-6 lg:grid-cols-3">
+                {productModels.map((model, index) => (
+                  <article key={model.name} className={cardStyle}>
+                    <div className="mb-4 rounded-xl border border-white/15 bg-black/40 p-4">
+                      <img
+                        src={`/assets/Screenshot 2026-04-15 2338${index === 0 ? '15' : index === 1 ? '32' : '44'}.png`}
+                        alt={model.name}
+                        className="mx-auto h-36 w-28 object-contain"
+                      />
+                    </div>
+                    <h4 className="text-lg font-semibold text-white">{model.name}</h4>
+                    <p className="mt-2 text-sm text-zinc-300">Finish: {model.finish}</p>
+                    <p className="mt-1 text-sm text-zinc-400">Best for: {model.bestFor}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            {/* Technology Components */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-6">Internal components revealed</h3>
+              <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+                <div className={`${cardStyle} overflow-hidden`}>
+                  <img
+                    src="/assets/internal-components.png"
+                    alt="Exploded view of Palgae internal components"
+                    className="h-full w-full rounded-3xl object-cover"
+                  />
+                </div>
+                <div className="grid gap-3">
+                  {[
+                    'CO₂ sensor array for precise carbon tracking',
+                    'PM2.5 sensor for fine particle awareness',
+                    'VOC sensor with indoor pollutant detection',
+                    'Temperature and humidity sensing module',
+                    'Silent air pump and airflow management',
+                    'Service-friendly power board and reactor cartridge'
+                  ].map((point) => (
+                    <article key={point} className={`${cardStyle} p-4`}>
+                      <p className="text-sm text-zinc-200">{point}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </Section>
@@ -220,38 +192,6 @@ function App() {
           </div>
         </Section>
 
-        <Section
-          id="technology"
-          eyebrow="Technology"
-          title="Internal components revealed"
-          subtitle="See how the Palgae smart chamber, sensor array, and service module fit together to make air quality visible and responsive."
-          className="bg-white/[0.02]"
-        >
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className={`${cardStyle} overflow-hidden`}>
-              <img
-                src="/assets/internal-components.png"
-                alt="Exploded view of Palgae internal components"
-                className="h-full w-full rounded-3xl object-cover"
-              />
-            </div>
-            <div className="grid gap-5">
-              {[
-                'CO₂ sensor array for precise carbon tracking',
-                'PM2.5 sensor for fine particle awareness',
-                'VOC sensor with indoor pollutant detection',
-                'Temperature and humidity sensing module',
-                'Silent air pump and airflow management',
-                'Service-friendly power board and reactor cartridge'
-              ].map((point) => (
-                <article key={point} className={cardStyle}>
-                  <p className="text-zinc-200">{point}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </Section>
-
         <Section id="benefits" eyebrow="Benefits" title="Why premium teams choose Palgae.">
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {benefits.map((item) => (
@@ -264,131 +204,135 @@ function App() {
 
         <Section
           id="performance"
-          eyebrow="Performance Statistics"
-          title="Measured product design targets for air and carbon performance."
-          subtitle="These figures summarize the current Palgae product-design targets and monitored outputs."
+          eyebrow="Technical Details"
+          title="Performance, specifications, and responsible design"
+          subtitle="Complete technical overview of Palgae's capabilities and design principles."
           className="bg-white/[0.02]"
         >
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-            {performanceStats.map((stat) => (
-              <div key={stat.label} className="grid grid-cols-1 gap-2 border-b border-white/10 px-6 py-5 sm:grid-cols-2">
-                <p className="text-zinc-400">{stat.label}</p>
-                <p className="font-medium text-zinc-100">{stat.value}</p>
+          <div className="space-y-12">
+            {/* Performance Statistics */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-6">Performance Statistics</h3>
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                {performanceStats.map((stat) => (
+                  <div key={stat.label} className="grid grid-cols-1 gap-2 border-b border-white/10 px-6 py-5 sm:grid-cols-2">
+                    <p className="text-zinc-400">{stat.label}</p>
+                    <p className="font-medium text-zinc-100">{stat.value}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </Section>
+            </div>
 
-        <Section
-          id="responsible-claims"
-          eyebrow="Responsible Claims"
-          title="Designed to support healthier indoor environments, responsibly."
-          className="bg-white/[0.02]"
-        >
-          <div className="rounded-3xl border border-algaeSoft/30 bg-gradient-to-r from-emerald-500/10 to-transparent p-8">
-            <p className="text-lg text-zinc-100">
-              Palgae provides localized air-quality awareness and bio-based support with oxygen-generation support through photosynthesis.
-            </p>
-            <p className="mt-4 text-zinc-300">
-              Palgae is not a replacement for building ventilation, HVAC requirements, or HEPA filtration systems.
-            </p>
-          </div>
-        </Section>
+            {/* Responsible Claims */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-6">Responsible Claims</h3>
+              <div className="rounded-3xl border border-algaeSoft/30 bg-gradient-to-r from-emerald-500/10 to-transparent p-8">
+                <p className="text-lg text-zinc-100">
+                  Palgae provides localized air-quality awareness and bio-based support with oxygen-generation support through photosynthesis.
+                </p>
+                <p className="mt-4 text-zinc-300">
+                  Palgae is not a replacement for building ventilation, HVAC requirements, or HEPA filtration systems.
+                </p>
+              </div>
+            </div>
 
-        <Section
-          id="modules"
-          eyebrow="Modular Architecture"
-          title="Built for elegant maintenance and long-term ownership confidence."
-          subtitle="Cartridge-based modules simplify servicing while preserving the luxury finish."
-        >
-          <div className="grid gap-5 md:grid-cols-2">
-            {modules.map((module) => (
-              <article key={module.name} className={cardStyle}>
-                <h3 className="text-xl font-semibold capitalize text-white">{module.name}</h3>
-                <p className="mt-2 text-zinc-300">{module.text}</p>
-              </article>
-            ))}
+            {/* Specifications */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-6">Specifications</h3>
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                {specs.map((spec) => (
+                  <div key={spec.label} className="grid grid-cols-1 gap-2 border-b border-white/10 px-6 py-5 sm:grid-cols-2">
+                    <p className="text-zinc-400">{spec.label}</p>
+                    <p className="font-medium text-zinc-100">{spec.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </Section>
 
         <Section
           id="maintenance"
-          eyebrow="Maintenance & Biomass"
-          title="Designed to be safe, clean, and practical for everyday ownership."
-          subtitle="Palgae servicing is intentionally simple, sealed, and suitable for routine workspace care."
+          eyebrow="Ownership & Use Cases"
+          title="Practical maintenance and ideal environments"
+          subtitle="Designed for easy care in premium workspaces where air quality matters most."
           className="bg-white/[0.02]"
         >
-          <div className="grid gap-5 md:grid-cols-3">
-            {maintenanceNotes.map((note) => (
-              <article key={note.title} className={cardStyle}>
-                <h3 className="text-lg font-semibold text-white">{note.title}</h3>
-                <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                  {note.points.map((point) => (
-                    <li key={point} className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-algaeSoft" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        <Section id="use-cases" eyebrow="Use Cases" title="Designed for selective, high-end interiors." className="bg-white/[0.02]">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {useCases.map((item) => (
-              <div key={item} className={`${cardStyle} py-5`}>
-                <p className="font-medium text-zinc-100">{item}</p>
+          <div className="space-y-12">
+            {/* Maintenance & Biomass */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-6">Maintenance & Biomass</h3>
+              <div className="grid gap-5 md:grid-cols-3">
+                {maintenanceNotes.map((note) => (
+                  <article key={note.title} className={cardStyle}>
+                    <h4 className="text-lg font-semibold text-white">{note.title}</h4>
+                    <ul className="mt-3 space-y-2 text-sm text-zinc-300">
+                      {note.points.map((point) => (
+                        <li key={point} className="flex gap-2">
+                          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-algaeSoft" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
               </div>
-            ))}
-          </div>
-        </Section>
+            </div>
 
-        <Section id="specs" eyebrow="Specifications" title="Product format overview.">
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-            {specs.map((spec) => (
-              <div key={spec.label} className="grid grid-cols-1 gap-2 border-b border-white/10 px-6 py-5 sm:grid-cols-2">
-                <p className="text-zinc-400">{spec.label}</p>
-                <p className="font-medium text-zinc-100">{spec.value}</p>
+            {/* Use Cases */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-6">Use Cases</h3>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {useCases.map((item) => (
+                  <div key={item} className={`${cardStyle} py-5`}>
+                    <p className="font-medium text-zinc-100">{item}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </Section>
 
         <Section id="faq" eyebrow="FAQ" title="Frequently asked questions." className="bg-white/[0.02]">
-          <div className="space-y-4">
+          <div className="max-w-4xl mx-auto space-y-3">
             {faq.map((item) => (
-              <details key={item.q} className="rounded-xl border border-white/10 bg-white/[0.02] p-5">
-                <summary className="cursor-pointer list-none pr-6 text-lg font-medium text-white">{item.q}</summary>
-                <p className="mt-3 text-zinc-300">{item.a}</p>
+              <details key={item.q} className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                <summary className="cursor-pointer list-none pr-6 text-base font-medium text-white">{item.q}</summary>
+                <p className="mt-2 text-sm text-zinc-300">{item.a}</p>
               </details>
             ))}
           </div>
         </Section>
 
         <Section
-          id="about"
-          eyebrow="Vision"
-          title="Palgae brings living clean-tech into luxury desk culture."
-          subtitle="We are building a new class of elegant personal environmental objects for premium workplaces."
-        />
-
-        <Section
           id="team"
-          eyebrow="Meet the Team"
-          title="The people building Palgae"
-          subtitle="A multidisciplinary team combining science, design, product execution, and market communication."
+          eyebrow="About Palgae"
+          title="The team and vision behind living clean-tech"
+          subtitle="Bringing microalgae biotechnology into luxury desk culture for premium workplaces."
           className="bg-white/[0.02]"
         >
-          <div className="grid gap-5 md:grid-cols-2">
-            {teamProfiles.map((member) => (
-              <article key={`${member.role}-${member.names}`} className={cardStyle}>
-                <p className="text-xs uppercase tracking-[0.16em] text-algaeSoft/80">{member.role}</p>
-                <h3 className="mt-2 text-xl font-semibold text-white">{member.names}</h3>
-                <p className="mt-3 text-zinc-300">{member.bio}</p>
-              </article>
-            ))}
+          <div className="space-y-12">
+            {/* Vision */}
+            <div className="text-center">
+              <h3 className="text-xl font-semibold text-white mb-4">Our Vision</h3>
+              <p className="text-lg text-zinc-300 max-w-3xl mx-auto">
+                We are building a new class of elegant personal environmental objects for premium workplaces.
+              </p>
+            </div>
+
+            {/* Team */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-6">Meet the Team</h3>
+              <div className="grid gap-5 md:grid-cols-2">
+                {teamProfiles.map((member) => (
+                  <article key={`${member.role}-${member.names}`} className={cardStyle}>
+                    <p className="text-xs uppercase tracking-[0.16em] text-algaeSoft/80">{member.role}</p>
+                    <h4 className="mt-2 text-xl font-semibold text-white">{member.names}</h4>
+                    <p className="mt-3 text-zinc-300">{member.bio}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
         </Section>
 

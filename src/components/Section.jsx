@@ -1,5 +1,5 @@
 const Section = ({ id, eyebrow, title, subtitle, children, className = '' }) => (
-  <section id={id} className={`relative scroll-mt-24 py-20 sm:py-24 ${className}`}>
+  <section id={id} className={`relative scroll-mt-24 py-12 sm:py-16 ${className}`}>
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       {(eyebrow || title || subtitle) && (
         <div className="mb-10 max-w-3xl">
