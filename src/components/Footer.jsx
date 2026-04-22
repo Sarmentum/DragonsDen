@@ -7,6 +7,7 @@ const Footer = () => (
         <BrandLogo compact className="mb-3" />
         <p className="mt-3 max-w-xs">Luxury living desk technology for healthier workspaces.</p>
         <p className="mt-4 text-xs text-zinc-500">© {new Date().getFullYear()} Palgae. All rights reserved.</p>
+        <p className="mt-2 text-xs text-zinc-500">Made by Doruk Ekingen for CDT Dragons Den</p>
       </div>
       <div>
         <p className="font-medium text-zinc-200">Company</p>
